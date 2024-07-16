@@ -1,0 +1,47 @@
+<!-- add_media.html -->
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добавить медиа</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Добавить медиа</h1>
+    </header>
+
+    <main>
+        <form onsubmit="event.preventDefault(); addMedia(this.title.value, this.description.value);">
+            <label for="title">Заголовок:</label>
+            <input type="text" id="title" name="title" required><br><br>
+
+            <label for="description">Описание:</label><br>
+            <textarea id="description" name="description" rows="4" cols="50"></textarea><br><br>
+
+            <!-- Выбор категории -->
+            <label for="category">Категория:</label>
+            <select id="category" name="category" onchange="setActiveCategory(this.value);">
+                <option value="Фильмы">Фильмы</option>
+                <option value="Мультфильмы">Мультфильмы</option>
+                <option value="Сериалы">Сериалы</option>
+                <option value="Мультсериалы">Мультсериалы</option>
+                <option value="Книги">Книги</option>
+                <option value="Аниме">Аниме</option>
+                <option value="Манга">Манга</option>
+                <option value="Ранобэ">Ранобэ</option>
+                <option value="Дорамы">Дорамы</option>
+            </select><br><br>
+
+            <button type="submit">Добавить медиа</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Медиатека</p>
+    </footer>
+</body>
+</html>
