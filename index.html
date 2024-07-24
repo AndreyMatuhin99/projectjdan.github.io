@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">Медиатека</a>
+            <div class="categories">
+                <div class="category" onclick="navigateToCategory('Фильмы')">Фильмы</div>
+                <div class="category" onclick="navigateToCategory('Мультфильмы')">Мультфильмы</div>
+                <div class="category" onclick="navigateToCategory('Сериалы')">Сериалы</div>
+                <div class="category" onclick="navigateToCategory('Мультсериалы')">Мультсериалы</div>
+                <div class="category" onclick="navigateToCategory('Книги')">Книги</div>
+                <div class="category" onclick="navigateToCategory('Аниме')">Аниме</div>
+                <div class="category" onclick="navigateToCategory('Манга')">Манга</div>
+                <div class="category" onclick="navigateToCategory('Ранобэ')">Ранобэ</div>
+                <div class="category" onclick="navigateToCategory('Дорамы')">Дорамы</div>
+            </div>
+            <button id="logout-button" onclick="logout()">Выйти</button>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Лента активности</h2>
+        <div id="activity-feed"></div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Медиатека</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
