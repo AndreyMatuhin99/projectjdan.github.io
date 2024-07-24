@@ -8,18 +8,24 @@
 </head>
 <body>
     <header>
-        <h1>Регистрация</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Медиатека</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main>
-        <form id="register-form">
-            <label for="username">Имя пользователя:</label>
+        <h1>Регистрация</h1>
+        <form id="registerForm" class="auth-form">
+            <label for="username">Логин</label>
             <input type="text" id="username" name="username" required>
-            <label for="password">Пароль:</label>
+
+            <label for="password">Пароль</label>
             <input type="password" id="password" name="password" required>
+
             <button type="submit">Зарегистрироваться</button>
         </form>
-        <p>Уже есть аккаунт? <a href="login.html">Войти</a></p>
     </main>
 
     <footer>
