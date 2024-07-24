@@ -3,31 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Главная</title>
+    <title>Медиатека</title>
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
     <header>
         <nav>
-            <a href="index.html" class="logo">Медиатека</a>
-            <div class="categories">
-                <div class="category" onclick="navigateToCategory('Фильмы')">Фильмы</div>
-                <div class="category" onclick="navigateToCategory('Мультфильмы')">Мультфильмы</div>
-                <div class="category" onclick="navigateToCategory('Сериалы')">Сериалы</div>
-                <div class="category" onclick="navigateToCategory('Мультсериалы')">Мультсериалы</div>
-                <div class="category" onclick="navigateToCategory('Книги')">Книги</div>
-                <div class="category" onclick="navigateToCategory('Аниме')">Аниме</div>
-                <div class="category" onclick="navigateToCategory('Манга')">Манга</div>
-                <div class="category" onclick="navigateToCategory('Ранобэ')">Ранобэ</div>
-                <div class="category" onclick="navigateToCategory('Дорамы')">Дорамы</div>
-            </div>
-            <button id="logout-button" onclick="logout()">Выйти</button>
+            <ul>
+                <li><a href="index.html">Медиатека</a></li>
+                <li><a href="index.html?category=Фильмы">Фильмы</a></li>
+                <li><a href="index.html?category=Мультфильмы">Мультфильмы</a></li>
+                <li><a href="index.html?category=Сериалы">Сериалы</a></li>
+                <li><a href="index.html?category=Мультсериалы">Мультсериалы</a></li>
+                <li><a href="index.html?category=Книги">Книги</a></li>
+                <li><a href="index.html?category=Аниме">Аниме</a></li>
+                <li><a href="index.html?category=Манга">Манга</a></li>
+                <li><a href="index.html?category=Ранобэ">Ранобэ</a></li>
+                <li><a href="index.html?category=Дорамы">Дорамы</a></li>
+                <li><a href="profile.html">Профиль</a></li>
+                <li><a href="auth.html">Войти</a></li>
+            </ul>
         </nav>
     </header>
 
     <main>
-        <h2>Лента активности</h2>
-        <div id="activity-feed"></div>
+        <h1>Добро пожаловать в Медиатеку</h1>
+        <div id="activityFeed"></div>
     </main>
 
     <footer>
