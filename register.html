@@ -12,13 +12,13 @@
     </header>
 
     <main>
-        <form id="register-form">
-            <label for="username">Имя пользователя:</label>
-            <input type="text" id="username" name="username" required>
-            <label for="password">Пароль:</label>
-            <input type="password" id="password" name="password" required>
-            <button type="submit">Зарегистрироваться</button>
-        </form>
+	<form id="register-form" action="/register" method="POST">
+    <label for="username">Имя пользователя:</label>
+    <input type="text" id="username" name="username" required>
+    <label for="password">Пароль:</label>
+    <input type="password" id="password" name="password" required>
+    <button type="submit">Зарегистрироваться</button>
+	</form>
         <p>Уже есть аккаунт? <a href="login.html">Войти</a></p>
     </main>
 
