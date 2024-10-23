@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 const fs = require('fs');
 const bodyParser = require('body-parser');
 const app = express();
@@ -6,6 +7,9 @@ const port = 3000;
 
 // Используем body-parser для обработки JSON-данных
 app.use(bodyParser.json());
+
+// Указываем папку для статических файлов
+app.use(express.static(path.join(__dirname, '/')));
 
 // Путь к файлу пользователей
 const usersFile = './users.json';
