@@ -1,7 +1,6 @@
-
 document.addEventListener("DOMContentLoaded", function() {
     const registerForm = document.getElementById("register-form");
-    
+
     // Handle registration form submission
     if (registerForm) {
         registerForm.addEventListener("submit", function(e) {
@@ -11,26 +10,27 @@ document.addEventListener("DOMContentLoaded", function() {
             const password = document.getElementById("password").value;
 
             if (username && password) {
-                // Load existing users from local storage or initialize empty array
-                let users = JSON.parse(localStorage.getItem("users")) || [];
-
-                // Check if the user already exists
-                const userExists = users.some(user => user.username === username);
-                if (userExists) {
-                    alert("Пользователь с таким именем уже существует.");
-                    return;
-                }
-
-                // Add new user
-                users.push({ username: username, password: password });
-
-                // Save updated user list to local storage
-                localStorage.setItem("users", JSON.stringify(users));
-
-                alert("Регистрация успешна!");
-
-                // Redirect to login page
-                window.location.href = "login.html";
+                // Отправка данных на сервер через fetch
+                fetch('/register', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ username, password }),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.message === 'Регистрация успешна.') {
+                        alert(data.message);
+                        window.location.href = 'login.html';
+                    } else {
+                        alert(data.message); // Вывод сообщения об ошибке
+                    }
+                })
+                .catch(error => {
+                    console.error('Ошибка при регистрации:', error);
+                    alert('Ошибка при регистрации. Попробуйте позже.');
+                });
             } else {
                 alert("Заполните все поля.");
             }
